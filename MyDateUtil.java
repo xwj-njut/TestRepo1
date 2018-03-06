@@ -210,6 +210,22 @@ public class MyDateUtil {
 	}
 	
 	
+		public static String betweenDays_branch1(Date startDate, Date endDate, String format) {
+		if (null == startDate || null == endDate || StringUtils.isEmpty(format)) {
+			return null;
+		}
+		if (null == startDate || null == endDate) {
+			return null;
+		}
+		// 开始时间大于结束时间
+		if(endDate.compareTo(startDate) < 0){
+			Date temp = startDate;
+			startDate = endDate;
+			endDate = temp;
+		}
+		return DurationFormatUtils.formatPeriod(startDate.getTime(), endDate.getTime(), format);
+	}
+	
 	
 	public static String betweenDays2(Date startDate, Date endDate) {
 		if (null == startDate || null == endDate) {
