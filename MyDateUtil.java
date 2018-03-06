@@ -193,6 +193,7 @@ public class MyDateUtil {
 		return DurationFormatUtils.formatPeriod(startDate.getTime(), endDate.getTime(), format);
 	}
 	
+		public static String betweenDays_branch(Date startDate, Date endDate, String format) {
 		if (null == startDate || null == endDate || StringUtils.isEmpty(format)) {
 			return null;
 		}
